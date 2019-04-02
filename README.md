@@ -1,6 +1,6 @@
 ## Ydirect
 ```
-Command line dictionary
+Command line dictionary (English to Chinese)
 ```
 
 ## How to build?
@@ -10,7 +10,7 @@ $ go build
 
 ## How to use?
 ```
-$ direct hello
+$ ydirect hello
 
 // will get:
 
