@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 	"net/http"
-	//"io/ioutil"
 	"github.com/PuerkitoBio/goquery"
+	"github.com/fatih/color"
 )
 
 func main() {
@@ -15,7 +15,6 @@ func main() {
 	}
 
 	url := fmt.Sprintf("http://dict.youdao.com/w/%s", os.Args[1])
-	//fmt.Printf("查询单词: %s\n", url)
 
 	res, err := http.Get(url)
 	if err != nil {
@@ -31,6 +30,7 @@ func main() {
 	}
 
 	doc.Find("#phrsListTab .trans-container > ul > li").Each(func(i int, s *goquery.Selection) {
-		fmt.Printf("%s\n", s.Text())
+		color.Green(s.Text())
+		//fmt.Printf("%s\n", s.Text())
 	})
 }
